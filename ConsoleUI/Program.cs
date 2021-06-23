@@ -42,29 +42,35 @@ namespace ConsoleUI
         }
         static void PrintGuestsName()
         {
-
+            foreach (KeyValuePair<int,string> i in guests)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", i.Key, i.Value);
+            }
         }
         static void GetRaffleNumber()
         {
-            int randomNumber;
+            
             do
             {
                 randomNumber = GenerateRandomeNumber(min, max);
             }
-            while (guests.ContainsKey(randomNumber));
-
-            Console.WriteLine();
-
+            while (!guests.ContainsKey(randomNumber));
 
 
         }
 
-
+        static void PrintWinner()
+        {
+            GetRaffleNumber();
+            Console.WriteLine(guests[randomNumber]);
+        }
 
         static void Main(string[] args)
         {
 
             GetUserInfo();
+            PrintGuestsName();
+            PrintWinner();
 
 
         }
@@ -76,7 +82,7 @@ namespace ConsoleUI
         private static int raffleNumber;
         private static Random _rdm = new Random();
         private static string GuestName;
-
+        private static int randomNumber; 
 
 
 
