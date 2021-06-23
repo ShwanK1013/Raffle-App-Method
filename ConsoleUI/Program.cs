@@ -21,11 +21,18 @@ namespace ConsoleUI
             {
                 GetUserInput();
                 Console.WriteLine("Do you want to add another name?");
-                otherName = Console.ReadLine();
+                string otherName1 = Console.ReadLine();
+                otherName = otherName1.ToLower();
 
             }
             while (otherName == 'yes');
         }
+        static int GenerateRandomeNumber(int min, int max)
+        {
+            return _rdm.Next(min, max);
+        }
+
+
 
         static void Main(string[] args)
         {
