@@ -40,8 +40,11 @@ namespace ConsoleUI
         {
             guests.Add(raffleNumber, GuestName);
         }
-
         static void PrintGuestsName()
+        {
+
+        }
+        static void GetRaffleNumber()
         {
             int randomNumber;
             do
@@ -49,9 +52,11 @@ namespace ConsoleUI
                 randomNumber = GenerateRandomeNumber(min, max);
             }
             while (guests.ContainsKey(randomNumber));
-            
-            
-            
+
+            Console.WriteLine();
+
+
+
         }
 
 
