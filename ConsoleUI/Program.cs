@@ -9,13 +9,38 @@ namespace ConsoleUI
 {
     class Program
     {
+        static string GetUserInput()
+        {
+            Console.WriteLine("Please input guest's name.");
+            return  string GetUserInput = Console.ReadLine();
+        }
+        static void GetUserInfo()
+        {
+            string otherName;
+            do 
+            {
+                GetUserInput();
+                Console.WriteLine("Do you want to add another name?");
+                otherName = Console.ReadLine();
+
+            }
+            while (otherName == 'yes');
+        }
+
         static void Main(string[] args)
         {
+
+           
 
 
         }
 
         //Start writing your code here
+        private static Dictionary<int, string> guests = new Dictionary<int, string> { };
+        private static int min = 1000;
+        private static int max = 9999;
+        private static int raffleNumber;
+        private static Random _rdm = new Random();
 
 
 
@@ -34,7 +59,7 @@ namespace ConsoleUI
                     case 0:
                         {
                             Console.WriteLine("         ╔════╤╤╤╤════╗");
-                            Console.WriteLine("         ║    │││ \\   ║");
+                            Console.WriteLine("         ║    │││ \   ║");
                             Console.WriteLine("         ║    │││  O  ║");
                             Console.WriteLine("         ║    OOO     ║");
                             break;
