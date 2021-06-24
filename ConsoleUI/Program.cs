@@ -15,8 +15,10 @@ namespace ConsoleUI
 
             Console.WriteLine("Welcome to the Party!!");
             GetUserInfo();
+            MultiLineAnimation();
             PrintGuestsName();
             PrintWinner();
+            
 
             Console.WriteLine("type any key to exit");
             string cmdHolder = Console.ReadLine();
@@ -101,52 +103,52 @@ namespace ConsoleUI
 
 
 
-        //static void MultiLineAnimation() // Credit: https://www.michalbialecki.com/2018/05/25/how-to-make-you-console-app-look-cool/
-        //{
-        //    var counter = 0;
-        //    for (int i = 0; i < 30; i++)
-        //    {
-        //        Console.Clear();
+        static void MultiLineAnimation() // Credit: https://www.michalbialecki.com/2018/05/25/how-to-make-you-console-app-look-cool/
+        {
+            var counter = 0;
+            for (int i = 0; i < 30; i++)
+            {
+                Console.Clear();
 
-        //        switch (counter % 4)
-        //        {
-        //            case 0:
-        //                {
-        //                    Console.WriteLine("         ╔════╤╤╤╤════╗");
-        //                    Console.WriteLine("         ║    │││ \   ║");
-        //                    Console.WriteLine("         ║    │││  O  ║");
-        //                    Console.WriteLine("         ║    OOO     ║");
-        //                    break;
-        //                };
-        //            case 1:
-        //                {
-        //                    Console.WriteLine("         ╔════╤╤╤╤════╗");
-        //                    Console.WriteLine("         ║    ││││    ║");
-        //                    Console.WriteLine("         ║    ││││    ║");
-        //                    Console.WriteLine("         ║    OOOO    ║");
-        //                    break;
-        //                };
-        //            case 2:
-        //                {
-        //                    Console.WriteLine("         ╔════╤╤╤╤════╗");
-        //                    Console.WriteLine("         ║   / │││    ║");
-        //                    Console.WriteLine("         ║  O  │││    ║");
-        //                    Console.WriteLine("         ║     OOO    ║");
-        //                    break;
-        //                };
-        //            case 3:
-        //                {
-        //                    Console.WriteLine("         ╔════╤╤╤╤════╗");
-        //                    Console.WriteLine("         ║    ││││    ║");
-        //                    Console.WriteLine("         ║    ││││    ║");
-        //                    Console.WriteLine("         ║    OOOO    ║");
-        //                    break;
-        //                };
-        //        }
+                switch (counter % 4)
+                {
+                    case 0:
+                        {
+                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ║    │││ \\   ║");
+                            Console.WriteLine("         ║    │││  O  ║");
+                            Console.WriteLine("         ║    OOO     ║");
+                            break;
+                        };
+                    case 1:
+                        {
+                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ║    ││││    ║");
+                            Console.WriteLine("         ║    ││││    ║");
+                            Console.WriteLine("         ║    OOOO    ║");
+                            break;
+                        };
+                    case 2:
+                        {
+                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ║   / │││    ║");
+                            Console.WriteLine("         ║  O  │││    ║");
+                            Console.WriteLine("         ║     OOO    ║");
+                            break;
+                        };
+                    case 3:
+                        {
+                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ║    ││││    ║");
+                            Console.WriteLine("         ║    ││││    ║");
+                            Console.WriteLine("         ║    OOOO    ║");
+                            break;
+                        };
+                }
 
-        //        counter++;
-        //        Thread.Sleep(200);
-        //    }
-        //}
+                counter++;
+                Thread.Sleep(200);
+            }
+        }
     }
 }
