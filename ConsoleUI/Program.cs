@@ -58,12 +58,14 @@ namespace ConsoleUI
 
                 raffleNumber = GenerateRandomeNumber(min, max);
 
-                AddGuestsInRaffle(raffleNumber, GuestName);
+                
 
                 while (guests.ContainsKey(raffleNumber))
                 {
                     raffleNumber = GenerateRandomeNumber(min, max); 
                 }
+
+                AddGuestsInRaffle(raffleNumber, GuestName);
 
                 GetUserInput("Do you want to add another name?");
 
