@@ -96,11 +96,15 @@ namespace ConsoleUI
                 Console.WriteLine(i);
             }
         }
-        static void GetRaffleNumber()
+        static void GetRaffleNumber(Dictionary<int,string> raffleDictionary)
         {
+             List <int> keyList = raffleDictionary.Keys.ToList();
+             Random _raffleRdm = new Random();
+             int winningIndex = _raffleRdm.Next(keyList.Count);
+             randomNumber = keyList[winningIndex];
 
-            int index = _raffleIndex.Next(guests.Count);
-            randomNumber = guests.Keys.ElementAt(index);
+             //int index = _raffleIndex.Next(guests.Count);
+             //randomNumber = guests.Keys.ElementAt(index);
 
 
             //do
@@ -116,7 +120,7 @@ namespace ConsoleUI
         static void PrintWinner()
         {
             
-            GetRaffleNumber();
+            GetRaffleNumber(guests); 
             Console.WriteLine($"The Winner is: {guests[randomNumber]} with the #{randomNumber}");
         }
 
