@@ -13,11 +13,13 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
 
-
+            Console.WriteLine("Welcome to the Party!!");
             GetUserInfo();
             PrintGuestsName();
             PrintWinner();
-            string ab = Console.ReadLine();
+
+            Console.WriteLine("type any key to exit");
+            string cmdHolder = Console.ReadLine();
 
 
         }
@@ -28,11 +30,12 @@ namespace ConsoleUI
         private static int max = 9999;
         private static int raffleNumber;
         private static Random _rdm = new Random();
-        
+        private static int randomNumber;
+        private static string GuestName;
 
         static string GetUserInput(string input)
         {
-            string GuestName;
+            
             Console.WriteLine(input);
             return GuestName = Console.ReadLine();
         }
@@ -43,7 +46,7 @@ namespace ConsoleUI
             string otherName;
             do
             {
-                string GuestName = GetUserInput("Please enter a name");
+                GetUserInput("Please enter a name");
 
                 raffleNumber = GenerateRandomeNumber(min, max);
 
@@ -74,31 +77,24 @@ namespace ConsoleUI
                 Console.WriteLine(i);
             }
         }
-        static int GetRaffleNumber(int min, int max)
+        static void GetRaffleNumber()
         {
-            int randomNumber;
+            
             do
             {
                 randomNumber = GenerateRandomeNumber(min, max);
             }
             while (!guests.ContainsKey(randomNumber));
-            return randomNumber;
+            
 
         }
-        //static int GetRaffleNumber(Dictionary<int,string>)
-        //{
-        //    int winningNumber;
-        //    List<int> RaffleNumber = new List<int>();
-        //    foreach()
-        //    return winningNumber;
-
-        //}
+        
 
         static void PrintWinner()
         {
             
-            int randomNumber = GetRaffleNumber(min, max);
-            Console.WriteLine(guests[randomNumber]);
+            GetRaffleNumber();
+            Console.WriteLine($"The Winner is: {guests[randomNumber]} with the #{randomNumber}");
         }
 
 
