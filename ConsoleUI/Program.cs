@@ -34,6 +34,7 @@ namespace ConsoleUI
         private static Random _rdm = new Random();
         private static int randomNumber;
         private static string GuestName;
+        private static Random _raffleIndex = new Random();
 
         static string GetUserInput(string input)
         {
@@ -91,16 +92,20 @@ namespace ConsoleUI
         }
         static void GetRaffleNumber()
         {
-            
-            do
-            {
-                randomNumber = GenerateRandomeNumber(min, max);
-            }
-            while (!guests.ContainsKey(randomNumber));
-            
+
+            int index = _raffleIndex.Next(guests.Count);
+            randomNumber = guests.Keys.ElementAt(index);
+
+
+            //do
+            //{
+            //    randomNumber = GenerateRandomeNumber(min, max);
+            //}
+            //while (!guests.ContainsKey(randomNumber));
+
 
         }
-        
+
 
         static void PrintWinner()
         {
