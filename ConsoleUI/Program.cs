@@ -28,8 +28,8 @@ namespace ConsoleUI
 
         //Start writing your code here
         private static Dictionary<int, string> guests = new Dictionary<int, string> { };
-        private static int min = 1000;
-        private static int max = 9999;
+        private static int min = 0;
+        private static int max = 9;
         private static int raffleNumber;
         private static Random _rdm = new Random();
         private static int randomNumber;
@@ -49,12 +49,18 @@ namespace ConsoleUI
             do
             {
                 GetUserInput("Please enter a name");
+
                 while (GuestName == "")
                 { 
                     GetUserInput("Please enter a valid name");
                 }
 
                 raffleNumber = GenerateRandomeNumber(min, max);
+
+                while (guests.ContainsKey(raffleNumber))
+                {
+                    raffleNumber = GenerateRandomeNumber(min, max); 
+                }
 
                 Console.WriteLine("Do you want to add another name?");
 
