@@ -114,7 +114,7 @@ namespace ConsoleUI
                 {
                     case 0:
                         {
-                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ╔════????════╗");
                             Console.WriteLine("         ║    │││ \\   ║");
                             Console.WriteLine("         ║    │││  O  ║");
                             Console.WriteLine("         ║    OOO     ║");
@@ -122,7 +122,7 @@ namespace ConsoleUI
                         };
                     case 1:
                         {
-                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ╔════????════╗");
                             Console.WriteLine("         ║    ││││    ║");
                             Console.WriteLine("         ║    ││││    ║");
                             Console.WriteLine("         ║    OOOO    ║");
@@ -130,7 +130,7 @@ namespace ConsoleUI
                         };
                     case 2:
                         {
-                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ╔════????════╗");
                             Console.WriteLine("         ║   / │││    ║");
                             Console.WriteLine("         ║  O  │││    ║");
                             Console.WriteLine("         ║     OOO    ║");
@@ -138,7 +138,7 @@ namespace ConsoleUI
                         };
                     case 3:
                         {
-                            Console.WriteLine("         ╔════╤╤╤╤════╗");
+                            Console.WriteLine("         ╔════????════╗");
                             Console.WriteLine("         ║    ││││    ║");
                             Console.WriteLine("         ║    ││││    ║");
                             Console.WriteLine("         ║    OOOO    ║");
@@ -147,7 +147,7 @@ namespace ConsoleUI
                 }
 
                 counter++;
-                Thread.Sleep(200);
+                Thread.Sleep(75);
             }
         }
     }
