@@ -49,6 +49,10 @@ namespace ConsoleUI
             do
             {
                 GetUserInput("Please enter a name");
+                while (GuestName == "")
+                { 
+                    GetUserInput("Please enter a valid name");
+                }
 
                 raffleNumber = GenerateRandomeNumber(min, max);
 
@@ -60,7 +64,7 @@ namespace ConsoleUI
 
                 AddGuestsInRaffle(raffleNumber, GuestName);
             }
-            while (otherName == "yes");
+            while (otherName == "yes" );
         }
 
         static int GenerateRandomeNumber(int min, int max)
