@@ -58,18 +58,22 @@ namespace ConsoleUI
 
                 raffleNumber = GenerateRandomeNumber(min, max);
 
+                AddGuestsInRaffle(raffleNumber, GuestName);
+
                 while (guests.ContainsKey(raffleNumber))
                 {
                     raffleNumber = GenerateRandomeNumber(min, max); 
                 }
 
-                Console.WriteLine("Do you want to add another name?");
+                GetUserInput("Do you want to add another name?");
 
-                string otherName1 = Console.ReadLine();
+                //GetUserInput("Do you want to add another name?");
 
-                otherName = otherName1.ToLower();
+                //string otherName1 = Console.ReadLine();
 
-                AddGuestsInRaffle(raffleNumber, GuestName);
+                otherName = GuestName.ToLower();
+
+               
             }
             while (otherName == "yes" );
         }
