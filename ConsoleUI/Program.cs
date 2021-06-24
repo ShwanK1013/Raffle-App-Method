@@ -9,24 +9,51 @@ namespace ConsoleUI
 {
     class Program
     {
+
+        static void Main(string[] args)
+        {
+
+
+            GetUserInfo();
+            PrintGuestsName();
+            PrintWinner();
+            string ab = Console.ReadLine();
+
+
+        }
+
+        //Start writing your code here
+        private static Dictionary<int, string> guests = new Dictionary<int, string> { };
+        private static int min = 1000;
+        private static int max = 9999;
+        private static int raffleNumber;
+        private static Random _rdm = new Random();
+        
+
         static string GetUserInput(string input)
         {
-            
+            string GuestName;
             Console.WriteLine(input);
             return GuestName = Console.ReadLine();
         }
 
         static void GetUserInfo()
         {
+            
             string otherName;
-            do 
+            do
             {
-                string name = GetUserInput("Please enter a name");
+                string GuestName = GetUserInput("Please enter a name");
+
                 raffleNumber = GenerateRandomeNumber(min, max);
+
                 Console.WriteLine("Do you want to add another name?");
+
                 string otherName1 = Console.ReadLine();
+
                 otherName = otherName1.ToLower();
-                AddGuestsInRaffle(raffleNumber, GuestName );
+
+                AddGuestsInRaffle(raffleNumber, GuestName);
             }
             while (otherName == "yes");
         }
@@ -42,47 +69,38 @@ namespace ConsoleUI
         }
         static void PrintGuestsName()
         {
-            foreach (KeyValuePair<int,string> i in guests)
+            foreach (KeyValuePair<int, string> i in guests)
             {
-                Console.WriteLine("Key = {0}, Value = {1}", i.Key, i.Value);
+                Console.WriteLine(i);
             }
         }
-        static void GetRaffleNumber()
+        static int GetRaffleNumber(int min, int max)
         {
-            
+            int randomNumber;
             do
             {
                 randomNumber = GenerateRandomeNumber(min, max);
             }
             while (!guests.ContainsKey(randomNumber));
-
+            return randomNumber;
 
         }
+        //static int GetRaffleNumber(Dictionary<int,string>)
+        //{
+        //    int winningNumber;
+        //    List<int> RaffleNumber = new List<int>();
+        //    foreach()
+        //    return winningNumber;
+
+        //}
 
         static void PrintWinner()
         {
-            GetRaffleNumber();
+            
+            int randomNumber = GetRaffleNumber(min, max);
             Console.WriteLine(guests[randomNumber]);
         }
 
-        static void Main(string[] args)
-        {
-
-            GetUserInfo();
-            PrintGuestsName();
-            PrintWinner();
-
-
-        }
-
-        //Start writing your code here
-        private static Dictionary<int, string> guests = new Dictionary<int, string> { };
-        private static int min = 1000;
-        private static int max = 9999;
-        private static int raffleNumber;
-        private static Random _rdm = new Random();
-        private static string GuestName;
-        private static int randomNumber; 
 
 
 
